@@ -1,0 +1,14 @@
+User-agent: *
+
+# Allow everything important for SEO
+Allow: /
+
+# Optional: block internal or system folders (only if they exist)
+Disallow: /node_modules/
+Disallow: /social/
+Disallow: /scripts/
+Disallow: /private/
+Disallow: /.git/
+
+# 🚀 IMPORTANT: Sitemap location (CRITICAL FOR INDEXING)
+Sitemap: https://brightlane.github.io/Many-Chat/sitemap.xml
