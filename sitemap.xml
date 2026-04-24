@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 🏠 MAIN HUB (ROOT PAGE) -->
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 📄 BLOG / PILLAR PAGE -->
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/blog1.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🧠 SEO CONTENT PAGES (EXAMPLES - ADD MORE AS YOU BUILD) -->
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/instagram-dm-automation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/manychat-funnel-strategy.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/chatbot-marketing-system.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/lead-generation-automation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Many-Chat/ai-marketing-tools.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
