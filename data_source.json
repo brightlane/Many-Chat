@@ -1,0 +1,40 @@
+{
+  "project_meta": {
+    "target_year": 2026,
+    "last_updated": "2026-04-27",
+    "global_manychat_link": "https://manychat.partnerlinks.io/emwcbue22i01-ogcg6e",
+    "global_ghl_link": "https://www.gohighlevel.com/?fp_ref=your_id"
+  },
+  "regions": {
+    "USA": { "currency": "USD", "marketing_rate": "$0.025", "utility_rate": "$0.004" },
+    "UK": { "currency": "GBP", "marketing_rate": "£0.042", "utility_rate": "£0.016" },
+    "Germany": { "currency": "EUR", "marketing_rate": "€0.126", "utility_rate": "€0.046" },
+    "India": { "currency": "INR", "marketing_rate": "₹0.98", "utility_rate": "₹0.11" }
+  },
+  "industries": [
+    {
+      "name": "Real Estate",
+      "pain_point": "leads ghosting after the first Zillow inquiry",
+      "automation_goal": "instant property detail delivery via WhatsApp",
+      "ghl_snapshot": "Real Estate Snapshot (REI Auto-Pilot)"
+    },
+    {
+      "name": "E-commerce",
+      "pain_point": "cart abandonment rates hitting 80% in 2026",
+      "automation_goal": "personalized DM discount codes",
+      "ghl_snapshot": "E-com Revenue Recovery"
+    },
+    {
+      "name": "Gyms & Fitness",
+      "pain_point": "no-shows for trial classes",
+      "automation_goal": "automated SMS/DM confirmation loops",
+      "ghl_snapshot": "Gym Lead & Appointment Booking"
+    },
+    {
+      "name": "SaaS Companies",
+      "pain_point": "high churn during the onboarding phase",
+      "automation_goal": "interactive feature tours inside Instagram DMs",
+      "ghl_snapshot": "SaaS Support & Churn Reduction"
+    }
+  ]
+}
