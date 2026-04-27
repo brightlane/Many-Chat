@@ -1,59 +1,32 @@
-# FILE NAME: vulture_engine.py
-import json
-import random
-import os
+# Updated section for vulture_engine.py
+def run_vulture_batch(batch_size=50):
+    # 1. Load the log of what we've already done
+    if os.path.exists('published_log.txt'):
+        with open('published_log.txt', 'r') as f:
+            already_published = set(line.strip() for line in f)
+    else:
+        already_published = set()
 
-# --- 2026 CONFIGURATION ---
-# Actual Meta 2026 Rates (Updated April 2026)
-META_2026_RATES = {
-    "USA": {"marketing": "$0.025", "utility": "$0.004"},
-    "India": {"marketing": "$0.0118", "utility": "$0.0014"},
-    "Germany": {"marketing": "$0.1365", "utility": "$0.0500"},
-    "UK": {"marketing": "$0.0529", "utility": "$0.0200"}
-}
+    count = 0
+    while count < batch_size:
+        ind = random.choice(industries)
+        loc = random.choice(locations)
+        page_id = f"{ind}-{loc}" # The unique fingerprint
+        
+        # 2. Only generate if it's NOT in the log
+        if page_id not in already_published:
+            page_code = generate_vulture_page(ind, loc)
+            filename = f"industries/{ind.lower().replace(' ', '-')}-{loc.lower()}-2026.html"
+            
+            with open(filename, "w") as f:
+                f.write(page_code)
+            
+            # 3. Add to the log so we don't do it again
+            with open('published_log.txt', 'a') as f:
+                f.write(f"{page_id}\n")
+            
+            already_published.add(page_id)
+            count += 1
+            print(f"Generated: {filename}")
 
-GHL_LINK = "https://www.gohighlevel.com/?fp_ref=your_id" # Replace with your GHL link
-
-def generate_vulture_page(industry, location):
-    hooks = [
-        f"Is your {industry} business ready for the April 2026 Meta API shift?",
-        f"Stop overpaying for {industry} DMs in {location}.",
-        f"The 2026 guide to {industry} automation in {location}."
-    ]
-    
-    stack_pitch = f"""
-    <div class='vulture-stack'>
-        <h3>The 2026 'Wedding Fund' Automation Stack</h3>
-        <p>ManyChat handles the DMs, but <strong>GoHighLevel</strong> closes the deals. 
-        Integrating these two can save you 40% on lead acquisition costs.</p>
-        <a href='{GHL_LINK}' class='cta'>Claim your GHL + ManyChat Strategy Session</a>
-    </div>
-    """
-
-    return f"""
-    <h1>{random.choice(hooks)}</h1>
-    <p>In {location}, Meta's 2026 marketing rate is {META_2026_RATES.get(location, META_2026_RATES['USA'])['marketing']}. 
-    Our Vulture Protocol ensures you only pay for what converts.</p>
-    {stack_pitch}
-    """
-
-# --- EXECUTION ---
-# Create output directory if it doesn't exist
-if not os.path.exists('industries'):
-    os.makedirs('industries')
-
-industries = ["Real Estate", "Gyms", "E-commerce", "SaaS", "Dentists"]
-locations = list(META_2026_RATES.keys())
-
-# Generate batch
-for i in range(50):
-    ind = random.choice(industries)
-    loc = random.choice(locations)
-    page_code = generate_vulture_page(ind, loc)
-    
-    # Save with standardized naming: industry-location-2026.html
-    filename = f"industries/{ind.lower().replace(' ', '-')}-{loc.lower()}-2026.html"
-    with open(filename, "w") as f:
-        f.write(page_code)
-
-print(f"Vulture Batch Complete: 50 pages generated in /industries/")
+run_vulture_batch(50)
